@@ -77,7 +77,7 @@ function get_summary_videos() {
   [
     .[]
     | 
-      { id, playlistId, publishedAt:.snippet.publishedAt, title:.snippet.title, description:.snippet.description, thumbnails:.snippet.thumbnails.high.url, duration:.contentDetails.duration
+      { id, playlistId, publishedAt:.snippet.publishedAt, title:.snippet.title, description:.snippet.description, tags:.snippet.tags, thumbnails:.snippet.thumbnails.high.url, duration:.contentDetails.duration
       , embedWidth: .player.embedWidth
       , embedHeight: .player.embedHeight
       , player:(
@@ -116,6 +116,7 @@ function get_videos() {
       , publishedAt: .[0].publishedAt
       , title: .[0].title
       , description: .[0].description
+      , tags: .[0].tags
       , thumbnails: .[0].thumbnails
       , duration: .[0].duration
       , embedWidth: .[0].embedWidth
